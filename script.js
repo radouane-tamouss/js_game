@@ -1,5 +1,5 @@
  var character = 
- document.getElementById("charcter");
+ document.getElementById("character");
  var block = document.getElementById("block"); 
  function jump()
  {
@@ -17,4 +17,11 @@
  var checkDead = setInterval(function(){
      var characterTop = 
      parseInt(window.getComputedStyle(character).getPropertyValue("top"));
+     var blockleft = 
+     parseInt(window.getComputedStyle(character).getPropertyValue("left"));
+     if(blockleft<20 && blockleft>0 && characterTop>=130){
+         block.style.animation = "none";
+         block.style.display = "none";
+         alert("GAME OVER.");
+     }
  },10);
